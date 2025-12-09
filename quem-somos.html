@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quem Somos | Corporattive</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos específicos da página Quem Somos */
+    :root {
+      --azul: #2f73b6;
+      --cinza: #1f2a36;
+      --cinza-claro: #f7f9fc;
+    }
+    body {
+      background: var(--cinza-claro);
+      color: var(--cinza);
+      font-family: 'Inter', sans-serif;
+    }
+    .qs-shell {
+      margin-top: 90px;
+      padding: 48px 8vw 80px;
+      display: grid;
+      gap: 48px;
+    }
+    .qs-hero {
+      background: #ffffff;
+      border: 1px solid #e6eef6;
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.06);
+    }
+    .qs-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+    .qs-sub {
+      max-width: 980px;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+    .qs-section {
+      display: grid;
+      gap: 18px;
+      background: #fff;
+      border: 1px solid #e6eef6;
+      border-radius: 14px;
+      padding: 28px 26px;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.05);
+    }
+    .qs-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.1rem);
+      letter-spacing: -0.01em;
+    }
+    .qs-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .qs-card {
+      display: grid;
+      gap: 10px;
+      padding: 12px 0;
+    }
+    .qs-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--cinza);
+    }
+    .qs-card p {
+      line-height: 1.6;
+      color: #3b4a5a;
+    }
+    ul.qs-list {
+      padding-left: 20px;
+      display: grid;
+      gap: 8px;
+    }
+    ul.qs-list li {
+      line-height: 1.6;
+      color: #3b4a5a;
+    }
+    .qs-pill {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #e8f1fb;
+      color: var(--azul);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 640px) {
+      .qs-shell {
+        padding: 36px 18px 64px;
+      }
+      .qs-section {
+        padding: 22px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header compartilhado -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../img/index/logo.png" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <a href="quem-somos.html#quemsomos">Quem Somos</a>
+        <a href="index.html#servicos">Nossos Serviços</a>
+        <a href="index.html#manutencao">Manutenção Predial</a>
+        <a href="index.html#visao">Visão de Negócio</a>
+        <a href="index.html#clientes">Clientes &amp; Cases</a>
+        <a href="index.html#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="qs-shell">
+    <!-- Hero -->
+    <section class="qs-hero" id="quemsomos">
+      <div class="qs-pill">Quem Somos</div>
+      <h1 class="qs-title">Quem Somos</h1>
+      <p class="qs-sub">
+        A Corporattive é uma empresa especializada em serviços voltados para o segmento corporativo, com ênfase em movimentação e ocupação de espaços. Atuamos de maneira estratégica, oferecendo soluções inovadoras e personalizadas para atender às necessidades dos nossos clientes com excelência e agilidade. Nosso objetivo é ser uma parceira de confiança, ajudando empresas a alcançar os melhores resultados por meio de uma gestão eficiente e uma abordagem focada em resultados.
+      </p>
+    </section>
+
+    <!-- Conteúdo principal -->
+    <section class="qs-section">
+      <h2>Perfil Corporativo</h2>
+      <div class="qs-grid">
+        <div class="qs-card">
+          <h3>📚 Conhecimento Especializado</h3>
+          <p>Com uma profunda compreensão do mercado corporativo e das suas dinâmicas, a Corporattive reúne uma equipe altamente qualificada e experiente. Estamos sempre atualizados com as melhores práticas e tendências do setor, o que nos permite oferecer soluções precisas e adaptadas às especificidades de cada cliente.</p>
+        </div>
+        <div class="qs-card">
+          <h3>🤝 Parceria Estratégica</h3>
+          <p>Na Corporattive, acreditamos que o sucesso de nossos clientes é o nosso sucesso. Por isso, nos dedicamos a agregar valor aos projetos e iniciativas de nossos parceiros, oferecendo suporte contínuo e colaboração efetiva. Nossa missão é contribuir para o crescimento dos nossos clientes, por meio de uma relação de confiança mútua, sempre buscando o melhor desempenho e a maximização de resultados.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="qs-section">
+      <h2>Diferenciais Competitivos</h2>
+      <ul class="qs-list">
+        <li><strong>Inteligência para Projetos Complexos:</strong> Somos especialistas em lidar com desafios intricados e projetos de alta complexidade, oferecendo soluções criativas e eficientes.</li>
+        <li><strong>Flexibilidade e Personalização:</strong> A Corporattive se adapta às necessidades específicas de cada cliente, criando soluções sob medida e garantindo a melhor experiência em todos os processos.</li>
+        <li><strong>Agilidade e Eficiência:</strong> Em um mercado corporativo dinâmico, sabemos da importância de tomar decisões rápidas e assertivas. Trabalhamos com agilidade para garantir que os projetos sejam entregues dentro do prazo, com a mais alta qualidade e sem imprevistos.</li>
+      </ul>
+    </section>
+
+    <section class="qs-section">
+      <h2>Nosso Compromisso</h2>
+      <p style="font-size:1.05rem; line-height:1.7;">
+        Estamos comprometidos com a excelência, o atendimento personalizado e o sucesso dos nossos clientes. A Corporattive não é apenas uma prestadora de serviços; somos uma parceira estratégica, comprometida em entender profundamente as necessidades de cada cliente e superar as expectativas em cada projeto.
+      </p>
+    </section>
+
+    <section class="qs-section">
+      <h2>Nossos Valores</h2>
+      <ul class="qs-list">
+        <li>⭐ <strong>Excelência no Atendimento:</strong> Buscamos sempre oferecer um serviço de alta qualidade, com soluções que atendem e superam as expectativas dos nossos clientes.</li>
+        <li>🤝 <strong>Parceria e Comprometimento:</strong> Valorizamos as relações de longo prazo e trabalhamos com dedicação para garantir que os objetivos dos clientes se tornem realidade.</li>
+        <li>💡 <strong>Inovação e Criatividade:</strong> Estamos constantemente à frente, buscando novas ideias e formas de resolver desafios complexos.</li>
+        <li>⚡ <strong>Agilidade e Eficiência:</strong> Atuamos com rapidez e precisão, garantindo decisões assertivas e entregas no prazo.</li>
+        <li>🛠️ <strong>Flexibilidade e Personalização:</strong> Adaptamos nossos serviços às necessidades específicas de cada cliente, tratando cada projeto de maneira única.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
