@@ -5,108 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quem Somos | Corporattive</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Estilos específicos da página Quem Somos */
     :root {
-      --azul: #2f73b6;
-      --cinza: #1f2a36;
-      --cinza-claro: #f7f9fc;
-    }
-    body {
-      background: var(--cinza-claro);
-      color: var(--cinza);
-      font-family: 'Inter', sans-serif;
-    }
-    .qs-shell {
-      margin-top: 90px;
-      padding: 48px 8vw 80px;
-      display: grid;
-      gap: 48px;
+      --azul-main: #2f73b6;
+      --azul-escuro: #051a30;
+      --cinza-texto: #1f2a36;
     }
     .qs-hero {
-      background: #ffffff;
-      border: 1px solid #e6eef6;
-      border-radius: 16px;
-      padding: 40px 36px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.06);
+      margin-top: 80px;
+      min-height: 38vh;
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 35%),
+                  linear-gradient(120deg, #051a30 0%, #0b2d52 35%, #2f73b6 100%);
+      color: #f5f5f5;
+      display: flex;
+      align-items: center;
+      padding: 64px 8vw;
+      position: relative;
+      overflow: hidden;
     }
-    .qs-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 4vw, 3rem);
-      margin-bottom: 14px;
-      letter-spacing: -0.01em;
+    .qs-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08), transparent 40%);
+      pointer-events: none;
     }
-    .qs-sub {
-      max-width: 980px;
-      line-height: 1.6;
-      font-size: 1.05rem;
-    }
+    .qs-hero h1 { font-size: clamp(2.2rem, 4vw, 3rem); margin-bottom: 12px; }
+    .qs-hero p { max-width: 860px; line-height: 1.5; opacity: 0.9; }
+
     .qs-section {
-      display: grid;
-      gap: 18px;
-      background: #fff;
-      border: 1px solid #e6eef6;
-      border-radius: 14px;
-      padding: 28px 26px;
-      box-shadow: 0 12px 26px rgba(0,0,0,0.05);
-    }
-    .qs-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.7rem, 3vw, 2.1rem);
-      letter-spacing: -0.01em;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 8vw;
+      color: var(--cinza-texto);
     }
     .qs-grid {
       display: grid;
-      gap: 18px;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
     }
     .qs-card {
+      background: #ffffff;
+      border: 1px solid #e6eef6;
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
       display: grid;
       gap: 10px;
-      padding: 12px 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
     }
+    .qs-card::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      background: radial-gradient(circle at 20% 20%, rgba(47, 115, 182, 0.18), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+    .qs-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.12);
+    }
+    .qs-card:hover::before { opacity: 1; }
     .qs-card h3 {
       font-size: 1.1rem;
-      font-weight: 700;
+      font-weight: 800;
+      color: var(--cinza-texto);
       display: flex;
-      gap: 8px;
       align-items: center;
-      color: var(--cinza);
-    }
-    .qs-card p {
-      line-height: 1.6;
-      color: #3b4a5a;
-    }
-    ul.qs-list {
-      padding-left: 20px;
-      display: grid;
       gap: 8px;
     }
-    ul.qs-list li {
-      line-height: 1.6;
+    .qs-card p, .qs-card li {
       color: #3b4a5a;
+      line-height: 1.5;
     }
-    .qs-pill {
+    .qs-card ul { padding-left: 18px; display: grid; gap: 6px; }
+    .qs-badge {
       display: inline-flex;
-      gap: 6px;
       align-items: center;
+      gap: 6px;
       padding: 6px 12px;
       border-radius: 999px;
       background: #e8f1fb;
-      color: var(--azul);
+      color: var(--azul-main);
+      font-size: 0.85rem;
       font-weight: 700;
-      font-size: 0.9rem;
+      letter-spacing: 0.02em;
     }
     @media (max-width: 640px) {
-      .qs-shell {
-        padding: 36px 18px 64px;
-      }
-      .qs-section {
-        padding: 22px 20px;
-      }
+      .qs-hero { padding: 48px 20px; }
+      .qs-section { padding: 48px 20px; }
     }
   </style>
 </head>
@@ -115,7 +107,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="../img/index/logo.png" alt="Logo" />
+        <img src="img/logo.png" alt="Logo" />
       </div>
       <div class="nav-links">
         <a href="quem-somos.html#quemsomos">Quem Somos</a>
@@ -128,57 +120,57 @@
     </nav>
   </header>
 
-  <main class="qs-shell">
-    <!-- Hero -->
-    <section class="qs-hero" id="quemsomos">
-      <div class="qs-pill">Quem Somos</div>
-      <h1 class="qs-title">Quem Somos</h1>
-      <p class="qs-sub">
-        A Corporattive é uma empresa especializada em serviços voltados para o segmento corporativo, com ênfase em movimentação e ocupação de espaços. Atuamos de maneira estratégica, oferecendo soluções inovadoras e personalizadas para atender às necessidades dos nossos clientes com excelência e agilidade. Nosso objetivo é ser uma parceira de confiança, ajudando empresas a alcançar os melhores resultados por meio de uma gestão eficiente e uma abordagem focada em resultados.
-      </p>
-    </section>
+  <!-- Hero -->
+  <section class="qs-hero" id="quemsomos">
+    <div>
+      <h1>Quem Somos</h1>
+      <p>A Corporattive é especializada em movimentação e ocupação de espaços, combinando estratégia, inovação e agilidade para impulsionar resultados com confiança e excelência.</p>
+    </div>
+  </section>
 
-    <!-- Conteúdo principal -->
-    <section class="qs-section">
-      <h2>Perfil Corporativo</h2>
-      <div class="qs-grid">
-        <div class="qs-card">
-          <h3>📚 Conhecimento Especializado</h3>
-          <p>Com uma profunda compreensão do mercado corporativo e das suas dinâmicas, a Corporattive reúne uma equipe altamente qualificada e experiente. Estamos sempre atualizados com as melhores práticas e tendências do setor, o que nos permite oferecer soluções precisas e adaptadas às especificidades de cada cliente.</p>
-        </div>
-        <div class="qs-card">
-          <h3>🤝 Parceria Estratégica</h3>
-          <p>Na Corporattive, acreditamos que o sucesso de nossos clientes é o nosso sucesso. Por isso, nos dedicamos a agregar valor aos projetos e iniciativas de nossos parceiros, oferecendo suporte contínuo e colaboração efetiva. Nossa missão é contribuir para o crescimento dos nossos clientes, por meio de uma relação de confiança mútua, sempre buscando o melhor desempenho e a maximização de resultados.</p>
-        </div>
+  <!-- Conteúdo principal -->
+  <section class="qs-section">
+    <div class="qs-card">
+      <span class="qs-badge">Quem Somos</span>
+      <p>A Corporattive é uma empresa especializada em serviços voltados para o segmento corporativo, com ênfase em movimentação e ocupação de espaços. Atuamos de maneira estratégica, oferecendo soluções inovadoras e personalizadas para atender às necessidades dos nossos clientes com excelência e agilidade. Nosso objetivo é ser uma parceira de confiança, ajudando empresas a alcançar os melhores resultados por meio de uma gestão eficiente e uma abordagem focada em resultados.</p>
+    </div>
+  </section>
+
+  <section class="qs-section">
+    <div class="qs-grid">
+      <div class="qs-card">
+        <span class="qs-badge">Perfil Corporativo</span>
+        <h3>📚 Conhecimento Especializado</h3>
+        <p>Com uma profunda compreensão do mercado corporativo e das suas dinâmicas, reunimos uma equipe altamente qualificada e experiente. Estamos sempre atualizados com as melhores práticas e tendências do setor.</p>
+        <h3>🤝 Parceria Estratégica</h3>
+        <p>Acreditamos que o sucesso de nossos clientes é o nosso sucesso. Por isso, agregamos valor aos projetos, com suporte contínuo e colaboração efetiva para maximizar resultados.</p>
       </div>
-    </section>
 
-    <section class="qs-section">
-      <h2>Diferenciais Competitivos</h2>
-      <ul class="qs-list">
-        <li><strong>Inteligência para Projetos Complexos:</strong> Somos especialistas em lidar com desafios intricados e projetos de alta complexidade, oferecendo soluções criativas e eficientes.</li>
-        <li><strong>Flexibilidade e Personalização:</strong> A Corporattive se adapta às necessidades específicas de cada cliente, criando soluções sob medida e garantindo a melhor experiência em todos os processos.</li>
-        <li><strong>Agilidade e Eficiência:</strong> Em um mercado corporativo dinâmico, sabemos da importância de tomar decisões rápidas e assertivas. Trabalhamos com agilidade para garantir que os projetos sejam entregues dentro do prazo, com a mais alta qualidade e sem imprevistos.</li>
-      </ul>
-    </section>
+      <div class="qs-card">
+        <span class="qs-badge">Diferenciais</span>
+        <ul>
+          <li><strong>Inteligência para Projetos Complexos:</strong> Soluções criativas e eficientes para desafios intricados.</li>
+          <li><strong>Flexibilidade e Personalização:</strong> Serviços sob medida, garantindo a melhor experiência em cada processo.</li>
+          <li><strong>Agilidade e Eficiência:</strong> Entregas rápidas, assertivas e de alta qualidade.</li>
+        </ul>
+      </div>
 
-    <section class="qs-section">
-      <h2>Nosso Compromisso</h2>
-      <p style="font-size:1.05rem; line-height:1.7;">
-        Estamos comprometidos com a excelência, o atendimento personalizado e o sucesso dos nossos clientes. A Corporattive não é apenas uma prestadora de serviços; somos uma parceira estratégica, comprometida em entender profundamente as necessidades de cada cliente e superar as expectativas em cada projeto.
-      </p>
-    </section>
+      <div class="qs-card">
+        <span class="qs-badge">Nosso Compromisso</span>
+        <p>Compromisso com excelência, atendimento personalizado e o sucesso de cada cliente. Somos parceiros estratégicos, entendendo a fundo as necessidades e superando expectativas em cada projeto.</p>
+      </div>
 
-    <section class="qs-section">
-      <h2>Nossos Valores</h2>
-      <ul class="qs-list">
-        <li>⭐ <strong>Excelência no Atendimento:</strong> Buscamos sempre oferecer um serviço de alta qualidade, com soluções que atendem e superam as expectativas dos nossos clientes.</li>
-        <li>🤝 <strong>Parceria e Comprometimento:</strong> Valorizamos as relações de longo prazo e trabalhamos com dedicação para garantir que os objetivos dos clientes se tornem realidade.</li>
-        <li>💡 <strong>Inovação e Criatividade:</strong> Estamos constantemente à frente, buscando novas ideias e formas de resolver desafios complexos.</li>
-        <li>⚡ <strong>Agilidade e Eficiência:</strong> Atuamos com rapidez e precisão, garantindo decisões assertivas e entregas no prazo.</li>
-        <li>🛠️ <strong>Flexibilidade e Personalização:</strong> Adaptamos nossos serviços às necessidades específicas de cada cliente, tratando cada projeto de maneira única.</li>
-      </ul>
-    </section>
-  </main>
+      <div class="qs-card">
+        <span class="qs-badge">Nossos Valores</span>
+        <ul>
+          <li><strong>Excelência no Atendimento:</strong> Qualidade e entrega que superam expectativas.</li>
+          <li><strong>Parceria e Comprometimento:</strong> Relações de longo prazo com dedicação total aos objetivos do cliente.</li>
+          <li><strong>Inovação e Criatividade:</strong> Soluções novas para desafios complexos.</li>
+          <li><strong>Agilidade e Eficiência:</strong> Decisões rápidas e entregas no prazo.</li>
+          <li><strong>Flexibilidade e Personalização:</strong> Cada projeto tratado de forma única.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
