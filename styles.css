@@ -59,6 +59,57 @@ header {
   opacity: 0.95;
 }
 
+/* Mobile toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #f7f7f7;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* Mobile menu panel */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: block;
+    padding: 10px 12px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
+  .nav-links {
+    position: fixed;
+    top: 68px;
+    right: 0;
+    width: 78vw;
+    max-width: 340px;
+    height: calc(100vh - 68px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 16px 0;
+    background: linear-gradient(150deg, rgba(15, 15, 20, 0.96), rgba(8, 20, 38, 0.92));
+    backdrop-filter: blur(18px);
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    z-index: 999;
+    box-shadow: -10px 0 28px rgba(0, 0, 0, 0.35);
+  }
+  body.nav-open .nav-links { transform: translateX(0); }
+  .nav-links a {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .nav-links a:last-child { border-bottom: none; }
+}
+
 /* CTA genérica */
 .cta {
   padding: 10px 18px;
@@ -567,8 +618,8 @@ header {
 
 @media (max-width: 560px) {
   .navbar { padding: 12px 14px; }
-  .nav-links { gap: 12px; }
-  .carousel { height: 60vh; }
+  .nav-links { width: 100vw; }
+  .carousel { height: 55vh; min-height: 360px; }
   .slide-tag { font-size: 0.72rem; padding: 8px 14px; }
   .slide-content h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
   .slide-content p { font-size: clamp(0.95rem, 3.4vw, 1.1rem); }

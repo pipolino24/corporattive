@@ -13,6 +13,7 @@
       <div class="logo">
         <img src="img/index/logo.png" alt="Logo" />
       </div>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu">☰</button>
       <div class="nav-links">
         <a href="quem-somos.html#quemsomos">Quem Somos</a>
         <a href="#servicos">Nossos Serviços</a>
@@ -319,6 +320,13 @@
 
     showSlide(0);
     startAuto();
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const body = document.body;
+    if (navToggle) {
+      navToggle.addEventListener('click', () => body.classList.toggle('nav-open'));
+      document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => body.classList.remove('nav-open')));
+    }
   </script>
 </body>
 </html>
