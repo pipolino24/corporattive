@@ -546,3 +546,33 @@ header {
 @media (max-width: 1100px) {
   .services-detailed-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 }
+
+@media (max-width: 1024px) {
+  .navbar { padding: 14px 18px; gap: 18px; }
+  .nav-links { gap: 16px; flex-wrap: wrap; }
+  .carousel { height: 75vh; }
+  .stats-services { padding: 64px 0 74px; }
+  .stats-grid { padding: 0 18px 40px; gap: 26px; }
+  .services-block { padding: 0 18px; }
+  .clients-inner { padding: 0 18px; }
+}
+
+@media (max-width: 760px) {
+  .carousel { height: 65vh; }
+  .slide-content { padding: 0 16px; max-width: 100%; }
+  .stats-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  .services-detailed-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .clients-track { gap: 24px; }
+}
+
+@media (max-width: 560px) {
+  .navbar { padding: 12px 14px; }
+  .nav-links { gap: 12px; }
+  .carousel { height: 60vh; }
+  .slide-tag { font-size: 0.72rem; padding: 8px 14px; }
+  .slide-content h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .slide-content p { font-size: clamp(0.95rem, 3.4vw, 1.1rem); }
+  .services-marquee .marquee-item { font-size: 0.9rem; padding: 10px 16px; }
+  .clients-track { gap: 16px; }
+  .clients-track img { max-height: 46px; }
+}
