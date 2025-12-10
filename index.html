@@ -327,6 +327,25 @@
       navToggle.addEventListener('click', () => body.classList.toggle('nav-open'));
       document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => body.classList.remove('nav-open')));
     }
+
+    // Escala dinâmica dos logos na vitrine de clientes
+    const clientLogos = document.querySelectorAll('.clients-track img');
+    const updateLogoScale = () => {
+      const centerX = window.innerWidth / 2;
+      const maxDist = window.innerWidth * 0.25; // alcance do efeito (começo/fim)
+      clientLogos.forEach(logo => {
+        const rect = logo.getBoundingClientRect();
+        const logoCenter = rect.left + rect.width / 2;
+        const dist = Math.abs(logoCenter - centerX);
+        const t = Math.max(0, 1 - dist / maxDist);
+        const scale = 0.65 + t * 0.9;     // tamanho mínimo/máximo (bordas -> centro)
+        const opacity = 0.4 + t * 0.55;   // visibilidade mínima/máxima (bordas -> centro)
+        logo.style.transform = `scale(${scale})`;
+        logo.style.opacity = opacity.toFixed(2);
+      });
+      requestAnimationFrame(updateLogoScale);
+    };
+    if (clientLogos.length) requestAnimationFrame(updateLogoScale);
   </script>
 </body>
 </html>
